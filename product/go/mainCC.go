@@ -24,7 +24,7 @@ type Product struct {
 }
 
 //Custom InitLedger  to Initiate the ledger with intial values if needed
-func (p *ProductContract) InitLedger(ctx contractapi.TransactionContextInterface) error {,
+func (p *ProductContract) InitLedger(ctx contractapi.TransactionContextInterface) error {
 	products := []Product{
 		{ID: "1", Name: "Wheat", Quantity: 100, Owner: "Sunsu"},
 		{ID: "2", Name: "Rice", Quantity: 100, Owner: "Sunsu"},
