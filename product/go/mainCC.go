@@ -18,7 +18,7 @@ type ProductContract struct {
 
 type Product struct {
 	ID       string `json:"ID"`
-	Name     string `json:"Name"`
+	Name     string `json:"Name_Test"`
 	Quantity int    `json:"Quantity"`
 	Owner    string `json:"Owner"`
 }
