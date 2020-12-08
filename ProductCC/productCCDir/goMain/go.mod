@@ -1,4 +1,4 @@
-module productCC
+module productCCDir
 
 go 1.14
 
