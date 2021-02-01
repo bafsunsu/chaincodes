@@ -1,0 +1,35 @@
+[
+    {
+    "name": "SupplierRetailerCollection",
+    "policy": "OR('supplierMSP.member', 'retailerMSP.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 1,
+    "blockToLive":1000000,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true
+    },
+    {
+    "name": "CarrierCollection",
+    "policy": "OR('carrierMSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 1,
+    "blockToLive":3,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": false,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('carrierMSP.member')"
+    }
+    },
+    {
+    "name": "SupplierCollection",
+    "policy": "OR('supplierMSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 1,
+    "blockToLive":3,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": false,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('supplierMSP.member')"
+    }
+    }
+ ]
