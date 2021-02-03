@@ -4,7 +4,7 @@
     "policy": "OR('supplierMSP.member', 'retailerMSP.member')",
     "requiredPeerCount": 1,
     "maxPeerCount": 1,
-    "blockToLive":1000000,
+    "blockToLive":10000000,
     "memberOnlyRead": true,
     "memberOnlyWrite": true
     },

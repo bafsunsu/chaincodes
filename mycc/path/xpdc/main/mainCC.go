@@ -247,26 +247,26 @@ func (p *ProductContract) CreatePrivateProduct(ctx contractapi.TransactionContex
 	transientAssetJSON, ok := transientMap["asset_properties"]
 	if !ok {
 		//log error to stdout
-		return fmt.Errorf("asset not found in the transient map input")
+		return fmt.Errorf("Asset not found in the transient map input")
 	}
 
-	var assetInput Product
-	err = json.Unmarshal(transientAssetJSON, &assetInput)
+	var priassetInput Product
+	err = json.Unmarshal(transientAssetJSON, &priassetInput)
 	if err != nil {
-		return fmt.Errorf("failed to unmarshal JSON: %v", err)
+		return fmt.Errorf("Failed to unmarshal JSON: %v", err)
 	}
 
 	product := Product{
-		ID:       assetInput.ID,
-		Name:     assetInput.Name,
-		Quantity: assetInput.Quantity,
-		Owner:    assetInput.Owner,
+		ID:       priassetInput.ID,
+		Name:     priassetInput.Name,
+		Quantity: priassetInput.Quantity,
+		Owner:    priassetInput.Owner,
 	}
 	productJSON, err := json.Marshal(product)
 	if err != nil {
 		return err
 	}
 
-	return ctx.GetStub().PutPrivateData(collection, assetInput.ID, productJSON)
+	return ctx.GetStub().PutPrivateData(collection, priassetInput.ID, productJSON)
 
 }
